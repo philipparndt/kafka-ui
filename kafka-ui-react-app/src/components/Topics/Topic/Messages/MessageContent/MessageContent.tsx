@@ -123,7 +123,7 @@ const MessageContent: React.FC<MessageContentProps> = ({
               <span>
                 <S.MetadataValue>{valueSerde}</S.MetadataValue>
                 <S.MetadataMeta>
-                  Size: <BytesFormatted value={contentSize}/>
+                  Size: <BytesFormatted value={contentSize} />
                 </S.MetadataMeta>
               </span>
             </S.Metadata>
