@@ -18,6 +18,7 @@ export interface MessageContentProps {
   contentSize?: number;
   keySerde?: string;
   valueSerde?: string;
+  valueDeserializeProperties?: any
 }
 
 const MessageContent: React.FC<MessageContentProps> = ({
@@ -30,6 +31,7 @@ const MessageContent: React.FC<MessageContentProps> = ({
   contentSize,
   keySerde,
   valueSerde,
+  valueDeserializeProperties,
 }) => {
   const [activeTab, setActiveTab] = React.useState<Tab>('content');
   const activeTabContent = () => {
@@ -121,8 +123,16 @@ const MessageContent: React.FC<MessageContentProps> = ({
               <span>
                 <S.MetadataValue>{valueSerde}</S.MetadataValue>
                 <S.MetadataMeta>
-                  Size: <BytesFormatted value={contentSize} />
+                  Size: <BytesFormatted value={contentSize}/>
                 </S.MetadataMeta>
+              </span>
+            </S.Metadata>
+
+            <S.Metadata>
+              <S.MetadataLabel>Properties</S.MetadataLabel>
+              <span>
+                <S.MetadataValue>{JSON.stringify(valueDeserializeProperties)}</S.MetadataValue>
+                <S.MetadataMeta>Timestamp type: {Object.keys(valueDeserializeProperties).length}</S.MetadataMeta>
               </span>
             </S.Metadata>
           </S.MetadataWrapper>
