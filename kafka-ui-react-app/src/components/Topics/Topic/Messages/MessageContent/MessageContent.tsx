@@ -132,7 +132,7 @@ const MessageContent: React.FC<MessageContentProps> = ({
               <S.MetadataLabel>Properties</S.MetadataLabel>
               <span>
                 <S.MetadataValue>{JSON.stringify(valueDeserializeProperties)}</S.MetadataValue>
-                <S.MetadataMeta>Timestamp type: {Object.keys(valueDeserializeProperties).length}</S.MetadataMeta>
+                <S.MetadataMeta>Properties: {Object.keys(valueDeserializeProperties).length}</S.MetadataMeta>
               </span>
             </S.Metadata>
           </S.MetadataWrapper>
