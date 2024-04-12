@@ -132,7 +132,7 @@ const MessageContent: React.FC<MessageContentProps> = ({
 
             {(keyDeserializeProperties == null || Object.keys(keyDeserializeProperties).length === 0) ? "" : (
               <S.Metadata>
-                <S.MetadataLabel>Key Properties</S.MetadataLabel>
+                <S.MetadataLabel>Key Deserialize Properties</S.MetadataLabel>
                 <span>
                   <S.MetadataValue>{JSON.stringify(keyDeserializeProperties)}</S.MetadataValue>
                   <S.MetadataMeta>Properties: {Object.keys(keyDeserializeProperties).length}</S.MetadataMeta>
@@ -142,7 +142,7 @@ const MessageContent: React.FC<MessageContentProps> = ({
 
             {(valueDeserializeProperties == null || Object.keys(valueDeserializeProperties).length === 0) ? "" : (
               <S.Metadata>
-                <S.MetadataLabel>Value Properties</S.MetadataLabel>
+                <S.MetadataLabel>Value Deserialize Properties</S.MetadataLabel>
                 <span>
                 <S.MetadataValue>{JSON.stringify(valueDeserializeProperties)}</S.MetadataValue>
                 <S.MetadataMeta>Properties: {Object.keys(valueDeserializeProperties).length}</S.MetadataMeta>
