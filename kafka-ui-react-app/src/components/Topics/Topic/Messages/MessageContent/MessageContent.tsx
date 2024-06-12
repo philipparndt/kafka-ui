@@ -18,6 +18,8 @@ export interface MessageContentProps {
   contentSize?: number;
   keySerde?: string;
   valueSerde?: string;
+  keyDeserializeProperties?: any
+  valueDeserializeProperties?: any
 }
 
 const MessageContent: React.FC<MessageContentProps> = ({
@@ -30,6 +32,8 @@ const MessageContent: React.FC<MessageContentProps> = ({
   contentSize,
   keySerde,
   valueSerde,
+  keyDeserializeProperties,
+  valueDeserializeProperties,
 }) => {
   const [activeTab, setActiveTab] = React.useState<Tab>('content');
   const activeTabContent = () => {
@@ -125,6 +129,26 @@ const MessageContent: React.FC<MessageContentProps> = ({
                 </S.MetadataMeta>
               </span>
             </S.Metadata>
+
+            {(keyDeserializeProperties == null || Object.keys(keyDeserializeProperties).length === 0) ? "" : (
+              <S.Metadata>
+                <S.MetadataLabel>Key Deserialize Properties</S.MetadataLabel>
+                <span>
+                  <S.MetadataValue>{JSON.stringify(keyDeserializeProperties)}</S.MetadataValue>
+                  <S.MetadataMeta>Properties: {Object.keys(keyDeserializeProperties).length}</S.MetadataMeta>
+                </span>
+              </S.Metadata>
+            )}
+
+            {(valueDeserializeProperties == null || Object.keys(valueDeserializeProperties).length === 0) ? "" : (
+              <S.Metadata>
+                <S.MetadataLabel>Value Deserialize Properties</S.MetadataLabel>
+                <span>
+                <S.MetadataValue>{JSON.stringify(valueDeserializeProperties)}</S.MetadataValue>
+                <S.MetadataMeta>Properties: {Object.keys(valueDeserializeProperties).length}</S.MetadataMeta>
+              </span>
+              </S.Metadata>
+            )}
           </S.MetadataWrapper>
         </S.Section>
       </td>
